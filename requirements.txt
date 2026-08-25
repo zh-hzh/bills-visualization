@@ -1,0 +1,6 @@
+# 运行 main.py 所需的第三方库
+# 安装：pip install -r requirements.txt
+
+pandas>=2.0
+matplotlib>=3.7
+openpyxl>=3.1
