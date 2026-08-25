@@ -8,7 +8,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from main import read_wechat, read_alipay, classify  # noqa: E402
 
-DATA_DIR = r"D:\每日任务\2026-08-25\data"
+# 数据目录：自动找本脚本旁边的 data 子目录（别人 clone 后也能直接跑）
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+if not os.path.isdir(DATA_DIR):
+    print("提示：未找到 data 目录（应把微信/支付宝账单文件放入本文件同级的 data 文件夹后重试）")
+    sys.exit(1)
 
 wechat_file = None
 alipay_file = None
